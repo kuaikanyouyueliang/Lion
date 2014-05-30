@@ -7,11 +7,41 @@ import java.util.Date;
 /**
  * 日期工具类
  */
-public class DateUtil {
+public class DateUtil{
 	/**格式: HH:mm*/
-	public static final String FORMAT_HH_MM="HH:mm";
+	private static final String FORMAT_HHMM="HH:mm";
 	/**格式：HH:mm:ss*/
-	public static final String FORMAT_HH_MM_SS="HH:mm:ss";
+	private static final String FORMAT_HHMMSS="HH:mm:ss";
+	/**格式: yyyy-MM-dd*/
+	private static final String FORMAT_YYYYMMDD="yyyy-MM-dd";
+	/**格式：yyyy-MM-dd HH:mm:ss*/
+	private static final String FORMAT_YYYYMMDDHHMMSS="yyyy-MM-dd HH:mm:ss";
+	
+	/**
+	 * 日期格式化为指定格式
+	 * @param date 日期
+	 * @param format 格式
+	 * @return 字符串
+	 */
+	public static String dateFormatStr(Date date,String format){
+		SimpleDateFormat sdf=new SimpleDateFormat(format);
+		return sdf.format(date);
+	}
+	/**
+	 * 字符串转换为指定格式的日期
+	 * @param dateStr 日期字符串
+	 * @param format 格式
+	 * @return
+	 */
+	public static Date strParseDate(String dateStr,String format){
+		SimpleDateFormat sdf=new SimpleDateFormat(format);
+		try {
+			return sdf.parse(dateStr);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 	
 	/**
 	 * 判断当前时间是否在工作时间内
@@ -19,7 +49,7 @@ public class DateUtil {
 	 */
 	public static boolean compareWorktime(String start,String end) {
 		Date currentDate = new Date();
-		SimpleDateFormat sdf = new SimpleDateFormat(FORMAT_HH_MM);
+		SimpleDateFormat sdf = new SimpleDateFormat(FORMAT_HHMM);
 		String currentTime = sdf.format(currentDate).toString();//当前时间
 		Date amStart = null;
 		Date amEnd = null;
@@ -68,6 +98,10 @@ public class DateUtil {
 		}
 	}
 	public static void main(String[] args) {
-		
+		System.out.println(dateFormatStr(new Date(), FORMAT_YYYYMMDD));
+		System.out.println(dateFormatStr(new Date(), FORMAT_YYYYMMDDHHMMSS));
+		System.out.println(dateFormatStr(new Date(), FORMAT_HHMMSS));
+		System.out.println(strParseDate("2013-05-06", FORMAT_YYYYMMDD));
+		System.out.println(strParseDate("2013-05-06 08:09:09", FORMAT_YYYYMMDDHHMMSS));
 	}
 }
