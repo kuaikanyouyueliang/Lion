@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * 日期工具类
  */
-public class DateUtils {
+public class DateUtil {
 	/**格式: HH:mm*/
 	public static final String FORMAT_HH_MM="HH:mm";
 	/**格式：HH:mm:ss*/
