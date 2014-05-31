@@ -21,5 +21,33 @@
 	<body>
 		<input type="text" id="startDate" value="">
 		<input type="text" id="endDate" value="">
+		<input type="button" id="btn" onclick="btnClick();" value="点击">
 	</body>
+	<script type="text/javascript">
+		//获取日期文本框里面的值
+		function btnClick(){
+			var startDate=$("#startDate").val();
+			var endDate=$("#endDate").val();
+			if(validate()){
+				//alert(startDate+"==="+endDate);
+				
+			}
+		}
+		//校验
+		function validate(){
+			var startDate=$("#startDate").val();
+			var endDate=$("#endDate").val();
+			if(startDate==null||startDate==""){
+				alert("请选择开始日期！");
+				$("#startDate").focus();
+				return false;
+			}
+			if(endDate==null||endDate==""){
+				alert("请选择结束日期！");
+				$("#endDate").focus();
+				return false;
+			}
+			return true;
+		}
+	</script>
 </html>
