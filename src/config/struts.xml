@@ -8,7 +8,7 @@
     <constant name="struts.enable.DynamicMethodInvocation" value="false" />
     <constant name="struts.devMode" value="true" />
 
-    <package name="default" namespace="/" extends="struts-default">
+    <package name="default" namespace="/" extends="struts-default,json-default">
 
         <default-action-ref name="index" />
 
@@ -26,10 +26,12 @@
                 <param name="namespace">/example</param>
             </result>
         </action> -->
+   		 <action name="datePicker" class="com.lion.web.DatepickerAction">
+   		     <result name="success" type="json"/>
+            <!-- <result name="success">/jQueryTemplate/datepicker.jsp</result> -->
+        </action>
     </package>
 
-    <include file="example.xml"/>
-
-    <!-- Add packages here -->
-
+   <!--  <include file="example.xml"/> -->
+   <!-- Add packages here -->
 </struts>

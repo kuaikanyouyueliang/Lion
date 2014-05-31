@@ -22,6 +22,10 @@
 		<input type="text" id="startDate" value="">
 		<input type="text" id="endDate" value="">
 		<input type="button" id="btn" onclick="btnClick();" value="点击">
+		<br>
+		<label id="start"></label>
+		<br>
+		<label id="end"></label>
 	</body>
 	<script type="text/javascript">
 		//获取日期文本框里面的值
@@ -29,8 +33,19 @@
 			var startDate=$("#startDate").val();
 			var endDate=$("#endDate").val();
 			if(validate()){
-				//alert(startDate+"==="+endDate);
-				
+				$.ajax({
+					type:"POST",
+					url:"datePicker.action",
+					data:{startDate:startDate,endDate:endDate},
+					dataType:"json",
+					success:function(data){
+						$("#start").html(data.startDate);
+						$("#end").html(data.endDate);
+					},
+					error:function(msg){
+						alert("网络异常,请检查!")
+					}
+				});
 			}
 		}
 		//校验
