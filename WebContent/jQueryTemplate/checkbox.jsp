@@ -14,4 +14,20 @@
 <body>
 
 </body>
+<script type="text/javascript">
+	function check(){
+		//左侧checkbox选择
+		var objLeft=document.getElementsByName("checkname");
+		var arr=new Array();
+		var j=0;
+		for(var i=0;i<objLeft.length;i++){
+			if(objLeft[i].checked==true){
+				//复选框选中的颜色
+				objLeft[i].checked?objLeft[i].nextSibling.style.backgroundColor="skyblue":objLeft[i].nextSibling.style.backgroundColor="white";
+				arr[j]=objLeft[i].value;
+				j++;
+			}
+		}
+	}
+</script>
 </html>
