@@ -24,11 +24,8 @@
 	<label for="checkname">复选框</label>
 
 	<input type="checkbox" name="box" value="0" checked="checked" />
-
 	<input type="checkbox" name="box" value="1" />
-
 	<input type="checkbox" name="box" value="2" />
-
 	<input type="checkbox" name="box" value="3" />
 </body>
 <script type="text/javascript">
