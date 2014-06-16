@@ -32,15 +32,15 @@
 	<input type="checkbox" name="box" value="3" />
 </body>
 <script type="text/javascript">
-	//通过id选择器选取
+	//1.通过id选择器选取
 	/* $("#checkname").click(function(){
 		alert("通过id选择器选取");
 	}); */
-	//通过类选择器选取
+	//2.通过类选择器选取
 	/* $(".ckclass").click(function(){
 		alert("通过类选择器选取");
 	}); */
-	//通过标签选择器和属性选择器来选取
+	//3.通过标签选择器和属性选择器来选取
 	$("input[name='checkname']").click(function() {
 		//alert("通过标签选择器和类选择器选取");
 		alert($(this).prop("checked"));
@@ -59,6 +59,9 @@
 			}
 		});
 		alert(array);
+	});
+	$("input[name='box']").each(function(){
+		$(this).prop("checked",true);
 	});
 </script>
 </html>
