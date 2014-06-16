@@ -10,10 +10,12 @@
 		<base href="<%=basePath%>">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Datepicker</title>
+		<!-- jQuery ui包引用 -->
 		<link rel="stylesheet" type="text/css" href="ui/css/redmond/jquery-ui-1.10.4.custom.min.css" />
 		<script type="text/javascript" src="ui/js/jquery-1.10.2.js"></script>
 		<script type="text/javascript" src="ui/js/jquery-ui-1.10.4.custom.min.js"></script>
 		<script type="text/javascript" src="ui/js/jquery.ui.datepicker-zh-CN.js"></script>
+		<!-- 公共样式 -->
 		<link rel="stylesheet" type="text/css" href="style/css/lion.css" />
 		<script type="text/javascript" src="style/js/default-ui.js"></script>
 		<script type="text/javascript" src="style/js/lion.js"></script>

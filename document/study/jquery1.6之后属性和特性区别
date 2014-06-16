@@ -1,0 +1,2 @@
+它将“属性”与“特性”做了区别，属性指的是“name，id”等等，特性指的是“selectedIndex, tagName, nodeName”等等。 
+JQ1.6之后，可以通过attr方法去获得属性，通过prop方法去获得特性
