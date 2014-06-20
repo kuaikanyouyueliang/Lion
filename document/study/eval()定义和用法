@@ -30,14 +30,13 @@ document.write(eval(x+17))
 27
 例子 2
 看一下在其他情况中，eval() 返回的结果：
-eval("2+3")	// 返回 5
-var myeval = eval;	// 可能会抛出 EvalError 异常
-myeval("2+3");	// 可能会抛出 EvalError 异常
+eval("2+3")// 返回 5
+var myeval = eval;// 可能会抛出 EvalError 异常
+myeval("2+3");// 可能会抛出 EvalError 异常
 可以使用下面这段代码来检测 eval() 的参数是否合法：
-try  {
-     alert("Result:" + eval(prompt("Enter an expression:","")));
-     }
-
+try{
+   alert("Result:" + eval(prompt("Enter an expression:","")));
+}
 catch(exception) {
-     alert(exception);
-     }
+   alert(exception);
+ }
