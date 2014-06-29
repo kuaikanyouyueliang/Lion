@@ -17,11 +17,11 @@
 </head>
 <body>
 	<input type="checkbox" id="checkall" name="checkall">全选<br/>
-	<input type="checkbox" name="checkname">1<br/>
-	<input type="checkbox" name="checkname">2<br/>
-	<input type="checkbox" name="checkname">3<br/>
-	<input type="checkbox" name="checkname">4<br/>
-	<input type="checkbox" name="checkname">5<br/>
+	<input type="checkbox" name="checkname" value="1">1<br/>
+	<input type="checkbox" name="checkname" value="2">2<br/>
+	<input type="checkbox" name="checkname" value="3">3<br/>
+	<input type="checkbox" name="checkname" value="4">4<br/>
+	<input type="checkbox" name="checkname" value="5">5<br/>
 </body>
 <script type="text/javascript">
 	/**点击全选全取消*/
@@ -36,9 +36,17 @@
 			});
 		}
 	});
-	/**当全部都为checked的时候,全选按钮选上*/
+	/**当全部都为checked的时候,全选按钮选上,有一个没有选上的话,全选按钮取消*/
 	$("input[name='checkname']").click(function(){
-		alert($(input[name='checkname']).length);
+		if($("input[name='checkname']:checked").length==$("input[name='checkname']").length){
+			$("input[name='checkall']").prop("checked",true);//置全选按钮为true
+		}else{
+			$("input[name='checkall']").prop("checked",false);//置全选按钮为false
+		}
+		var checkitems=new Array();//存储选中的值;
+		$("input[name='checkname']:checked").each(function(){
+			checkitems.push($(this).val());
+		});
 	});
 </script>
 </html>
