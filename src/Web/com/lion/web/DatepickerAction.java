@@ -5,6 +5,7 @@ import com.opensymphony.xwork2.ActionSupport;
  * 日期选择
  */
 public class DatepickerAction extends ActionSupport{
+	private static final long serialVersionUID = -8526093007171052443L;
 	private String startDate;
 	private String endDate;
 	public String execute() throws Exception {

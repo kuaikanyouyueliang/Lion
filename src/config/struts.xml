@@ -30,6 +30,8 @@
    		     <result name="success" type="json"/>
             <!-- <result name="success">/jQueryTemplate/datepicker.jsp</result> -->
         </action>
+        <action name="pagination" class="com.lion.web.PaginationAction">
+        </action>
     </package>
 
    <!--  <include file="example.xml"/> -->
