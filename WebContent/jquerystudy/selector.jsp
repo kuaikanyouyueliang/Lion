@@ -8,7 +8,7 @@
 <html>
 <head>
 <base href="<%=basePath%>">
-<title>Insert title here</title>
+<title>常规选择器</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="ui/js/jquery-1.10.2.js"></script>
 <style type="text/css">
