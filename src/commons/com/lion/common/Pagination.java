@@ -1,4 +1,7 @@
 package com.lion.common;
+
+import java.util.List;
+
 /**
  * 分页实体 
  */
@@ -9,6 +12,9 @@ public class Pagination {
 	private int pageSize;
 	/**总条数*/
 	private int totalRows;
+	/**当前页数据*/
+	private List<?> list;
+	
 	/**页码，第...页*/
 	public int getPageNo() {
 		return pageNo;
@@ -32,6 +38,14 @@ public class Pagination {
 	/**总条数*/
 	public void setTotalRows(int totalRows) {
 		this.totalRows = totalRows;
+	}
+	/**当前页数据*/
+	public List<?> getList() {
+		return list;
+	}
+	/**当前页数据*/
+	public void setList(List<?> list) {
+		this.list = list;
 	} 
 	
 }
