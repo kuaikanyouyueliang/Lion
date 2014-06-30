@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.lion.common.Pagination;
+import com.lion.entity.PersonInfo;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class PaginationAction extends ActionSupport{
@@ -12,9 +13,12 @@ public class PaginationAction extends ActionSupport{
 	private Pagination page;
 	@Override
 	public String execute() throws Exception {
-		List<String> list=new ArrayList<String>();
+		List<PersonInfo> list=new ArrayList<PersonInfo>();
 		for(int i=1;i<=10;i++){
-			list.add(i+"");
+			PersonInfo personInfo=new PersonInfo();
+			personInfo.setAge("10"+i);
+			personInfo.setName("name"+i);
+			list.add(personInfo);
 		}
 		page.setTotalRows(20);
 		page.setList(list);
