@@ -27,10 +27,11 @@
             </result>
         </action> -->
    		 <action name="datePicker" class="com.lion.web.DatepickerAction">
-   		     <result name="success" type="json"/>
+   		    <result name="success" type="json"/>
             <!-- <result name="success">/jQueryTemplate/datepicker.jsp</result> -->
         </action>
         <action name="pagination" class="com.lion.web.PaginationAction">
+        	<result name="success" type="json"/>
         </action>
     </package>
 

@@ -13,6 +13,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>分页</title>
 <script type="text/javascript" src="ui/js/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+//知识点:
+	//ajax请求方式：$.post([url],[callback],['json']);
+</script>
 </head>
 <body>
 </body>
@@ -25,9 +29,12 @@
 			type:"POST",
 			url:"pagination.action",
 			data:{"page.pageNo":1,"page.pageSize":2},
-			success:null,
+			success:callbackdata,
 			error:null
 		});
+	}
+	function callbackdata(data){
+		alert(data.page.list);
 	}
 </script>
 </html>
