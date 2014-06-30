@@ -1,0 +1,37 @@
+http://mawenjian.net/p/1270.html
+【转载】
+我昨天在做一个Java Web项目的时候，发现了一个非常奇怪的问题：某个页面在用jQuery的ajax()方法向服务器端请求JSON数据时，Chrome、FireFox甚至连IE 11都可以拿到数据，可是IE 8却偏偏不行。我用alert()函数显示了一下本应携带JSON数据的变量，我发现该变量的状态竟然是“undefined”。也就是说，是jQuery获取或解析JSON数据时失败了。更奇怪的是，在这个Web系统中恰好还有几个页面也使用了jQuery的ajax()方法，但它们都可以与服务器端正常交互。
+
+为了解决这个“undefined”问题，我用Google搜遍了中英文网站，可惜即使是StackOverflow这样权威的技术网站，也没能解释出其中的原因或者给出一个让人十分信服的解决方案。网友给出的最常见的解决方案是引用一个叫做json2.js的文件，使用其中的JSON.parse( )方法来代替JavaScript的eval( )方法。可是我的项目中明明有一些页面是可以正常工作的，为什么我非得用这个函数来替换呢？出现问题的根源又是什么？所以我不得不自己寻找其中的原因了。
+
+因为出现问题的代码在Chrome等浏览器中是可以正常运行的，所以我们首先可以排除语法错误。那会不会是输出的JSON字符串前后含有空格呢？我用trim( )函数处理掉了输出字符串前后可能存在的空格，可惜问题依然没有解决。排除掉了前两种可能产生错误的情况，那么问题只会在一个地方产生——JSON输出的文件头（Header）部分！
+
+于是，我用Chrome浏览器分别抓取了可以正常交互的JSON和产生错误的JSON数据，然后对它们的Header部分进行对比：
+
+这是报错JSON的Header部分：
+
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Mon, 23 Jun 2014 13:19:21 GMT
+
+以及（添加utf8编码后）：
+
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Content-Type: application/json;charset=utf8
+Transfer-Encoding: chunked
+Date: Mon, 23 Jun 2014 13:19:21 GMT
+
+这是正常JSON的Header部分：
+
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Content-Type: application/json;charset=UTF-8
+Content-Length: 920
+Date: Mon, 23 Jun 2014 13:27:10 GMT
+
+除去HTTP版本号、状态码、服务器名称以及响应时间，真正不同的只有两行，即第三行和第四行。我随后经过查阅资料得知，“Transfer-Encoding: chunked”和“Content-Length: XXX”是两种不同的传输方式，后者传输的内容长度是固定的，而前者，则适用于不断向浏览器端输出内容的场景。所以，真相只有一个——编码问题！！于是我把编码中的“utf8”改成了“utf-8”，再调试，问题果然华丽丽地解决了！
+
+因此，原因就是 —— 第一个Header中没有添加字符集；第二个Header中把“UTF-8”字符集的格式写错了，旧版的IE浏览器不能识别编码，仅此而已。所以如果你在写程序的过程中也遇到了JSON变量是“undefined”的情况，不妨先去看看是不是编码出了问题，因为旧版IE浏览器对编码格式的书写太敏感了。
