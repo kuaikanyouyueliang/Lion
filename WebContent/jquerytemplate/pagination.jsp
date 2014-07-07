@@ -37,7 +37,7 @@
 		});
 	}
 	function callbackdata(data){
-		alert(data.page.list);
+		
 	}
 </script>
 </html>
