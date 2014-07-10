@@ -3,7 +3,7 @@ package com.lion.common;
 import java.util.List;
 
 /**
- * 分页实体
+ * 分页公共类
  */
 public class Pagination {
 	/** 页码，第...页 */
