@@ -12,6 +12,8 @@ public class Pagination {
 	private int pageSize;
 	/**总条数*/
 	private int totalRows;
+	/**总页数*/
+	private int pageAll;
 	/**当前页数据*/
 	private List<?> list;
 	
@@ -46,6 +48,14 @@ public class Pagination {
 	/**当前页数据*/
 	public void setList(List<?> list) {
 		this.list = list;
+	}
+	/**获取总页数*/
+	public int getPageAll() {
+		return this.pageAll=this.totalRows%this.pageSize==0?this.totalRows/this.pageSize:this.totalRows/this.pageSize+1;
+	}
+	/**总页数*/
+	public void setPageAll(int pageAll) {
+		this.pageAll = pageAll;
 	} 
 	
 }

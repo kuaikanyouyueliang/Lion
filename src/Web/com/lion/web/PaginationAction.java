@@ -14,13 +14,13 @@ public class PaginationAction extends ActionSupport{
 	@Override
 	public String execute() throws Exception {
 		List<PersonInfo> list=new ArrayList<PersonInfo>();
-		for(int i=1;i<=10;i++){
+		for(int i=1;i<=page.getPageSize();i++){
 			PersonInfo personInfo=new PersonInfo();
-			personInfo.setAge("10"+i);
-			personInfo.setName("name"+i);
+			personInfo.setAge("10"+i+":"+page.getPageNo());
+			personInfo.setName("name"+i+":"+page.getPageNo());
 			list.add(personInfo);
 		}
-		page.setTotalRows(20);
+		page.setTotalRows(58);
 		page.setList(list);
 		return SUCCESS;
 	}
