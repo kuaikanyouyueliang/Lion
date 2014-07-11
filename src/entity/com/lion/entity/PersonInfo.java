@@ -1,6 +1,7 @@
 package com.lion.entity;
 
 public class PersonInfo {
+	private int id;
 	private String name;
 	private String age;
 	public String getName() {
@@ -14,5 +15,11 @@ public class PersonInfo {
 	}
 	public void setAge(String age) {
 		this.age = age;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 }
