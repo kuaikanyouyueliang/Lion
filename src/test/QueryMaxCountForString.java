@@ -1,6 +1,6 @@
 /**
  * 查询字符串中最出现最多的字符
- *
+ * 原理：总长度减去现有长度就是被替换掉的字符串
  */
 public class QueryMaxCountForString {
 	public static void main(String[] args) {
@@ -12,7 +12,7 @@ public class QueryMaxCountForString {
 		String maxChar="";
 		int maxCount=0;
 		int len=str.length();
-		for(int i=0;i<len;i++){
+		while(len>0){
 			String _tmp=String.valueOf(str.charAt(0));
 			str=str.replaceAll(_tmp, "");
 			int _tmpcount=len-str.length();
@@ -21,7 +21,6 @@ public class QueryMaxCountForString {
 				maxCount=_tmpcount;
 			}
 			len=str.length();
-			i=0;
 		}
 		System.out.println(maxChar);
 		System.out.println(maxCount);
