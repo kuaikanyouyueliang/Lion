@@ -90,8 +90,7 @@ public class DateUtil {
 	 * @return
 	 */
 	public static boolean compare(Date current, Date start, Date end) {
-		if ((current.getTime() >= start.getTime())
-				&& (current.getTime() <= end.getTime())) {// 在start和end的时间段内;
+		if ((current.getTime() >= start.getTime()) && (current.getTime() <= end.getTime())) {// 在start和end的时间段内;
 			return true;
 		} else {
 			return false;
@@ -137,8 +136,10 @@ public class DateUtil {
 		long between_days = (time2 - time1) / (1000 * 3600 * 24);
 		return Integer.parseInt(String.valueOf(between_days));
 	}
+
 	/**
 	 * 字符两个日期计算天数差
+	 * 
 	 * @param smdate
 	 * @param bdate
 	 * @return
@@ -155,13 +156,13 @@ public class DateUtil {
 		return Integer.parseInt(String.valueOf(between_days));
 	}
 
-	public static void main(String[] args) throws Exception{
-//		System.out.println(dateFormatStr(new Date(), FORMAT_YYYYMMDD));
-//		System.out.println(dateFormatStr(new Date(), FORMAT_YYYYMMDDHHMMSS));
-//		System.out.println(dateFormatStr(new Date(), FORMAT_HHMMSS));
-//		System.out.println(strParseDate("2013-05-06", FORMAT_YYYYMMDD));
-//		System.out.println(strParseDate("2013-05-06 08:09:09",
-//				FORMAT_YYYYMMDDHHMMSS));
+	public static void main(String[] args) throws Exception {
+		// System.out.println(dateFormatStr(new Date(), FORMAT_YYYYMMDD));
+		// System.out.println(dateFormatStr(new Date(), FORMAT_YYYYMMDDHHMMSS));
+		// System.out.println(dateFormatStr(new Date(), FORMAT_HHMMSS));
+		// System.out.println(strParseDate("2013-05-06", FORMAT_YYYYMMDD));
+		// System.out.println(strParseDate("2013-05-06 08:09:09",
+		// FORMAT_YYYYMMDDHHMMSS));
 		System.out.println(daysBetween("2014-09-05", "2014-09-05"));
 		System.out.println(daysBetween(strParseDate("2014-09-23", FORMAT_YYYYMMDD), new Date()));
 	}
