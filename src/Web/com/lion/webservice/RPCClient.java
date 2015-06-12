@@ -26,7 +26,6 @@ public class RPCClient {
 			//QName requestMethod=new QName("http://ibcrm.htsc.com","queryCust");
 			serviceClient.invokeBlocking(requestMethod, requestParams,responseParams);
 		} catch (AxisFault e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
