@@ -7,6 +7,6 @@
 <title>index page</title>
 </head>
 <body>
-this is a index page;
+这是一个测试、学习项目
 </body>
 </html>
