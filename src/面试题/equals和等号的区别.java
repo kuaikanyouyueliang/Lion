@@ -4,6 +4,10 @@
  */
 public class equals和等号的区别 {
     public static void main(String[] args) {
+        /**
+         * 等号两边的数据类型必须一致，可相互转换的基本类型除外
+         */
+
         Integer a = 1;
         Integer b = new Integer(1);
         System.out.println(a == b);//针对引用类型比较的是变量所指向的内存地址
