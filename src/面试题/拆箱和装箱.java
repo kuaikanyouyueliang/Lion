@@ -13,5 +13,9 @@ public class 拆箱和装箱 {
         Integer integer= Integer.valueOf(1);
         int i=integer.intValue();
         
+        Integer x=1;
+        int y=1;
+        System.out.println(x==y);
+        
     }
 }
