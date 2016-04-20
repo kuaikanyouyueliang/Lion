@@ -13,7 +13,18 @@
     <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
 </head>
 <body>
-<button class="btn btn-info">Bootstrap</button>
+    <ul class="nav navbar-nav">
+        <li>Home</li>
+        <li>Our Story</li>
+        <li>Pictures</li>
+        <li>Wedding Party</li>
+        <li>Venue</li>
+        <li>Travel</li>
+        <li>Registry</li>
+        <li>PSVP</li>
+        <li>Contract</li>
+        <li>Styles</li>
+    </ul>
 </body>
 </html>
 <%--在页面加载完的时候再加载js文件，先展开网页再加载js--%>
