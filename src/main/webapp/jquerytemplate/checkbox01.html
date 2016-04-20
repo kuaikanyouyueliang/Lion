@@ -1,0 +1,30 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>checkbox选择后变色</title>
+<style>
+	.checkbox {
+	 background-Color:e-xpression(this.checked?'yellow':'buttonface');
+	}
+</style>
+</head>
+<script>
+	function chaCloor(field){
+		var pig = field.checked;
+		pig?field.nextSibling.style.backgroundColor="skyblue":field.nextSibling.style.backgroundColor="white";
+	}
+</script>
+<body>
+<table height=48 width=136>
+	<tr>
+	 <td><input type="checkbox" onClick="chaCloor(this)"><span>网页特效</span></td>
+	</tr>
+	<tr>
+	<td><input type="checkbox" onClick="chaCloor(this)"><span>源码下载</span></td>
+	</tr>
+	<tr>
+	<td><input type="checkbox" onClick="chaCloor(this)"><span>编程软件</span></td>
+	</tr>
+</table>
+</body>
+</html>
