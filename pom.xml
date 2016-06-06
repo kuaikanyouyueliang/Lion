@@ -153,9 +153,9 @@
             <version>1.0</version>
         </dependency>
         <!--<dependency>-->
-            <!--<groupId>net.java.dev.stax-utils</groupId>-->
-            <!--<artifactId>stax-utils</artifactId>-->
-            <!--<version>20060502</version>-->
+        <!--<groupId>net.java.dev.stax-utils</groupId>-->
+        <!--<artifactId>stax-utils</artifactId>-->
+        <!--<version>20060502</version>-->
         <!--</dependency>-->
         <dependency>
             <groupId>wsdl4j</groupId>
@@ -168,16 +168,15 @@
             <version>2.9.3</version>
         </dependency>
         <!--<dependency>-->
-            <!--<groupId>org.apache.xbean</groupId>-->
-            <!--<artifactId>xbean</artifactId>-->
-            <!--<version>3.4</version>-->
+        <!--<groupId>org.apache.xbean</groupId>-->
+        <!--<artifactId>xbean</artifactId>-->
+        <!--<version>3.4</version>-->
         <!--</dependency>-->
         <!--<dependency>-->
-            <!--<groupId>org.apache.ws.commons</groupId>-->
-            <!--<artifactId>XmlSchema</artifactId>-->
-            <!--<version>1.0.2</version>-->
+        <!--<groupId>org.apache.ws.commons</groupId>-->
+        <!--<artifactId>XmlSchema</artifactId>-->
+        <!--<version>1.0.2</version>-->
         <!--</dependency>-->
-
 
 
         <dependency>
@@ -263,9 +262,9 @@
             <version>4.2.3.Final</version>
         </dependency>
         <!--<dependency>-->
-            <!--<groupId>org.hibernate</groupId>-->
-            <!--<artifactId>hibernate-parent</artifactId>-->
-            <!--<version>3.6.10.Final</version>-->
+        <!--<groupId>org.hibernate</groupId>-->
+        <!--<artifactId>hibernate-parent</artifactId>-->
+        <!--<version>3.6.10.Final</version>-->
         <!--</dependency>-->
         <dependency>
             <groupId>antlr</groupId>
@@ -293,9 +292,9 @@
             <version>3.0.6</version>
         </dependency>
         <!--<dependency>-->
-            <!--<groupId>org.apache.xbean</groupId>-->
-            <!--<artifactId>xbean</artifactId>-->
-            <!--<version>3.4</version>-->
+        <!--<groupId>org.apache.xbean</groupId>-->
+        <!--<artifactId>xbean</artifactId>-->
+        <!--<version>3.4</version>-->
         <!--</dependency>-->
         <dependency>
             <groupId>org.apache.struts.xwork</groupId>
@@ -334,22 +333,37 @@
         </dependency>
     </dependencies>
     <build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>2.2</version>
-                <configuration>
-                    <failOnMissingWebXml>false</failOnMissingWebXml>
-                </configuration>
-            </plugin>
-        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.5.1</version>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                    </configuration>
+                </plugin>
+                <!--<plugin>-->
+                    <!--<artifactId>maven-war-plugin</artifactId>-->
+                    <!--<version>2.2</version>-->
+                    <!--<configuration>-->
+                        <!--<failOnMissingWebXml>false</failOnMissingWebXml>-->
+                    <!--</configuration>-->
+                <!--</plugin>-->
+            </plugins>
+        </pluginManagement>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
     </build>
 </project>
